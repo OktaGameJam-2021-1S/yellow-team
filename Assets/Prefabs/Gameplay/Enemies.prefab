@@ -60,11 +60,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0f86972f183e574eac86382209c46dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCount: 3
+  castle: {fileID: 0}
+  enemyCount: 8
   enemies:
   - {fileID: 3343400541712103999, guid: d30fa9e0effe02f4aa76328243863b83, type: 3}
   - {fileID: 3343400541712103999, guid: 4b96f1c68b5decd45af8e94c8a943039, type: 3}
   - {fileID: 3343400541712103999, guid: ffbb99046d5feac459f07b7521a68fc7, type: 3}
+  - {fileID: 7029358511884673512, guid: 0a044c77c6ead054bb4e1e2696bb0d0e, type: 3}
   spawnPoints:
   - {fileID: 0}
   - {fileID: 0}
