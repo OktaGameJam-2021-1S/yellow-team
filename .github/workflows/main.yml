@@ -11,9 +11,9 @@ jobs:
     - name: 'run unity build'
       uses: ncipollo/unity-action@main
       with: 
-        #license: ${{ secrets.license }}
-        username: ${{ secrets.username }}
-        password: ${{ secrets.password }}
+        license: ${{ secrets.license }}
+        #username: ${{ secrets.username }}
+        #password: ${{ secrets.password }}
         mode: build
         build_method: BuildCommand.PerformBuild_OSx
     - name: 'upload artifact'
@@ -29,9 +29,9 @@ jobs:
     - name: 'run unity build'
       uses: ncipollo/unity-action@main
       with: 
-        #license: ${{ secrets.license }}
-        username: ${{ secrets.username }}
-        password: ${{ secrets.password }}
+        license: ${{ secrets.license }}
+        #username: ${{ secrets.username }}
+        #password: ${{ secrets.password }}
         mode: build
         build_method: BuildCommand.PerformBuild_Windows
     - name: zip folder
@@ -50,9 +50,9 @@ jobs:
     - name: 'run unity build'
       uses: ncipollo/unity-action@main
       with: 
-        #license: ${{ secrets.license }}
-        username: ${{ secrets.username }}
-        password: ${{ secrets.password }}
+        license: ${{ secrets.license }}
+        #username: ${{ secrets.username }}
+        #password: ${{ secrets.password }}
         mode: build
         build_method: BuildCommand.PerformBuild_Linux
     - name: 'upload artifact'
