@@ -635,7 +635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultGO: {fileID: 5553464918221167499}
   turretPrefab: {fileID: 0}
-  minePrefab: {fileID: 0}
+  minePrefab: {fileID: 75925528332333625, guid: d23185718bba0ee4fa34c7c573d96709, type: 3}
 --- !u!1 &7983287318372470292
 GameObject:
   m_ObjectHideFlags: 0

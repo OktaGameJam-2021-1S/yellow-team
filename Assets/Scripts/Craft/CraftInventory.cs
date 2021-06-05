@@ -11,7 +11,7 @@ public class CraftInventory
     {
         inventory = new Dictionary<ItemType, int>();
         inventory.Add(ItemType.Turret,0);
-        inventory.Add(ItemType.Mine,0);
+        inventory.Add(ItemType.Mine,10);
     }
     
     public void AddItem(ItemType item)
