@@ -202,7 +202,7 @@ CapsuleCollider:
   m_Radius: 0.22603205
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: -0, y: 0.55, z: 0}
+  m_Center: {x: -0, y: 0.99, z: 0}
 --- !u!136 &6323165708230503884
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -286,7 +286,6 @@ MonoBehaviour:
   craftPickupPrefab: {fileID: 6100104344004886772, guid: 85679dbdbbed63a42871fab348c25d68, type: 3}
   target: {fileID: 0}
   animator: {fileID: 4307821410024430118}
-  Attack: 0
 --- !u!1 &8304779195078220915
 GameObject:
   m_ObjectHideFlags: 0

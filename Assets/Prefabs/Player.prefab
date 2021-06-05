@@ -192,6 +192,36 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &695086631346253302
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5182311016919382017}
+  m_Layer: 0
+  m_Name: BulletSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5182311016919382017
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695086631346253302}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.1013, z: 0.7144}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_Children: []
+  m_Father: {fileID: 4240983980665413638}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1844166603803732998
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,11 +272,11 @@ MonoBehaviour:
   weaponType: 0
   modelPrefab: {fileID: 4240983980665413638}
   shotParent: {fileID: 0}
+  bulletSpawn: {fileID: 5182311016919382017}
   poolSize: 20
   fireRate: 0.3
   damage: 8
   speedBullet: 15
-  timeToBulletDisappear: 2
 --- !u!114 &2665651517544300239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -656,11 +686,11 @@ MonoBehaviour:
   weaponType: 0
   modelPrefab: {fileID: 242343951232078256}
   shotParent: {fileID: 0}
+  bulletSpawn: {fileID: 4812101369684714864}
   poolSize: 20
   fireRate: 0.7
   damage: 20
   speedBullet: 18
-  timeToBulletDisappear: 2
 --- !u!114 &1844242923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -678,6 +708,36 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   enemyHandler: {fileID: 11400000, guid: 844697ca1887009458f7eab66bdc9b91, type: 2}
+--- !u!1 &8599815568984303737
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4812101369684714864}
+  m_Layer: 0
+  m_Name: BulletSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4812101369684714864
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8599815568984303737}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.008, y: 0.076, z: 0.333}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_Children: []
+  m_Father: {fileID: 242343951232078256}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &239439033264187268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -826,14 +886,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3be79da1d04df4b4e85be7659c66dfb9, type: 3}
---- !u!4 &4673344930716882736 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4240195329330838887, guid: 3be79da1d04df4b4e85be7659c66dfb9, type: 3}
-  m_PrefabInstance: {fileID: 431433676043556265}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &177465407300104770 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3be79da1d04df4b4e85be7659c66dfb9, type: 3}
+  m_PrefabInstance: {fileID: 431433676043556265}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4673344930716882736 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4240195329330838887, guid: 3be79da1d04df4b4e85be7659c66dfb9, type: 3}
   m_PrefabInstance: {fileID: 431433676043556265}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &665876841482594552 stripped
@@ -908,7 +968,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 64450277453957346, guid: a3fe0be603767ae42a0d14c81d777c2b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a3fe0be603767ae42a0d14c81d777c2b, type: 3}
 --- !u!4 &4240983980665413638 stripped
 Transform:

@@ -3,6 +3,7 @@
 public abstract class Shell : MonoBehaviour
 {
 	protected const float timeToDisappear = 2f;
+
 	protected enum FlyingState
 	{
 		FLYING,
@@ -40,7 +41,7 @@ public abstract class Shell : MonoBehaviour
 	/// </summary>
 	/// <param name="shooter"></param>
 	/// <param name="damageReport"></param>
-	public void Shoot(Weapon shooter, DamageReport damageReport, float speedBullet ,float timeToDisappear)
+	public void Shoot(Weapon shooter, DamageReport damageReport, float speedBullet)
 	{
 		speed = speedBullet;
 		Shoot(shooter, damageReport);

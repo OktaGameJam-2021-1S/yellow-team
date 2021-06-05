@@ -20,12 +20,11 @@ public class Weapon : MonoBehaviour
 	[SerializeField] WeaponType weaponType;
 	[SerializeField] Transform modelPrefab;
 	[SerializeField] Transform shotParent;
+	[SerializeField] Transform bulletSpawn;
 	[SerializeField] int poolSize = 20;
 	[SerializeField] float fireRate;
 	[SerializeField] float damage;
 	[SerializeField] float speedBullet = 1;
-	[SerializeField] float timeToBulletDisappear = 2;
-
 
 	Queue<GameObject> pool;
 
@@ -88,10 +87,10 @@ public class Weapon : MonoBehaviour
 	public void Shoot(DamageReport damageReport)
 	{
 		var newShell = pool.Dequeue();
-		newShell.transform.position = transform.position;
+		newShell.transform.position = bulletSpawn.position;
 		newShell.transform.rotation = transform.rotation;
 		newShell.SetActive(true);
-		newShell.GetComponent<Shell>().Shoot(this, damageReport, speedBullet, timeToBulletDisappear);
+		newShell.GetComponent<Shell>().Shoot(this, damageReport, speedBullet);
 		if (pool.Count <= 1)
 			ResizePool(poolSize);
 	}
