@@ -17,7 +17,8 @@ public abstract class FlyingEnemy : Enemy
                 }
                 else
                 {
-                    Vector3 dest = player.componentCache.position;
+                    //Vector3 dest = player.componentCache.position;
+                    Vector3 dest = target.position;
                     dest = new Vector3(dest.x, transform.position.y, dest.z);
                     transform.LookAt(dest);
                     transform.position = Vector3.MoveTowards(transform.position, dest, Speed * Time.deltaTime);

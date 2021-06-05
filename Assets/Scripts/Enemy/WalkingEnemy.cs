@@ -26,7 +26,8 @@ public abstract class WalkingEnemy : Enemy
                 }
                 else
                 {
-                    agent.destination = player.componentCache.position;
+                    //agent.destination = player.componentCache.position;
+                    agent.destination = target.position;
                 }
                 break;
             case MovingState.STAYING:
