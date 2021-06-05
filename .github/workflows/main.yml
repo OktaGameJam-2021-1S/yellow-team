@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: 'run unity build'
-      uses: ncipollo/unity-action@master
+      uses: ncipollo/unity-action@main
       with: 
         #license: ${{ secrets.license }}
         username: ${{ secrets.username }}
@@ -27,7 +27,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: 'run unity build'
-      uses: ncipollo/unity-action@master
+      uses: ncipollo/unity-action@main
       with: 
         #license: ${{ secrets.license }}
         username: ${{ secrets.username }}
@@ -48,7 +48,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: 'run unity build'
-      uses: ncipollo/unity-action@master
+      uses: ncipollo/unity-action@main
       with: 
         #license: ${{ secrets.license }}
         username: ${{ secrets.username }}
