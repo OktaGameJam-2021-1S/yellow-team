@@ -14,7 +14,8 @@ public class Enemy : Entity
     [Tooltip("Hoy much percertto drop a craft item")]
     [Range(0,100)] [SerializeField] protected int droprateCraft;
     [SerializeField] protected GameObject craftPickupPrefab;
-    protected Player touchingPlayer; // Needed to determine if the player is still in the affected area after the touch attack cooldown
+    //protected Player touchingPlayer; // Needed to determine if the player is still in the affected area after the touch attack cooldown
+    protected Entity touchingPlayer; // Needed to determine if the player is still in the affected area after the touch attack cooldown
 
     [SerializeField] protected Transform target;
 
@@ -61,9 +62,10 @@ public class Enemy : Entity
 
     protected void OnTriggerEnter(Collider other)
     {
-        var player = other.GetComponent<Player>();
-        if (player != null)
+        //if (player != null)
+        if (other.tag == "Player" || other.tag == "Castle")
         {
+            var player = other.GetComponent<Entity>();
             touchingPlayer = player;
             player.TakeDamage(new DamageReport(damage * touchDamageMultiplier, this));
         }
