@@ -73,7 +73,7 @@ public class Enemy : BaseChar, IControllerChar
         }
     }
 
-    private void HandleInput()
+    public void HandleInput()
     {
         throw new NotImplementedException();
     }
