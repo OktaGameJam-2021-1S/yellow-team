@@ -1,62 +1,38 @@
-name: Unity Build
+name: Build project
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
-
-  build-macos:
+  buildForAllSupportedPlatforms:
+    name: Build for ${{ matrix.targetPlatform }}
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        targetPlatform:
+          - StandaloneOSX # Build a macOS standalone (Intel 64-bit).
+#          - StandaloneWindows # Build a Windows standalone.
+          - StandaloneWindows64 # Build a Windows 64-bit standalone.
+          - StandaloneLinux64 # Build a Linux 64-bit standalone.
+#          - iOS # Build an iOS player.
+#          - Android # Build an Android .apk standalone app.
+#          - WebGL # WebGL.
     steps:
-    - uses: actions/checkout@v2
-    - name: 'run unity build'
-      uses: ncipollo/unity-action@main
-      with: 
-        license: ${{ secrets.license }}
-        username: ${{ secrets.username }}
-        password: ${{ secrets.password }}
-        mode: build
-        build_method: BuildCommand.PerformBuild_OSx
-    - name: 'upload artifact'
-      uses: actions/upload-artifact@v1.0.0
-      with:
-        name: os_x.zip
-        path: Build/os_x
-
-  build-windows:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: 'run unity build'
-      uses: ncipollo/unity-action@main
-      with: 
-        license: ${{ secrets.license }}
-        username: ${{ secrets.username }}
-        password: ${{ secrets.password }}
-        mode: build
-        build_method: BuildCommand.PerformBuild_Windows
-    - name: zip folder
-      run: |
-        zip -r windows.zip Build
-    - name: 'upload artifact'
-      uses: actions/upload-artifact@v1.0.0
-      with:
-        name: windows.zip
-        path: windows.zip
-
-  build-linux:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: 'run unity build'
-      uses: ncipollo/unity-action@main
-      with: 
-        license: ${{ secrets.license }}
-        username: ${{ secrets.username }}
-        password: ${{ secrets.password }}
-        mode: build
-        build_method: BuildCommand.PerformBuild_Linux
-    - name: 'upload artifact'
-      uses: actions/upload-artifact@v1.0.0
-      with:
-        name: linux.zip
-        path: Build/linux
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          lfs: true
+      - uses: actions/cache@v2
+        with:
+          path: Library
+          key: Library-${{ matrix.targetPlatform }}
+          restore-keys: Library-
+      - uses: game-ci/unity-builder@v2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          targetPlatform: ${{ matrix.targetPlatform }}
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Build-${{ matrix.targetPlatform }}
+          path: build/${{ matrix.targetPlatform }}
