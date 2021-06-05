@@ -27,6 +27,13 @@ public abstract class Aimer : MonoBehaviour
 	{
 		Vector3 dirToTarget = (target.position - transform.position).normalized;
 		float dstToTarget = Vector3.Distance(transform.position, target.position);
+
+		//Keep the closer target
+		if(this.target != null && Vector3.Distance(this.target.position, transform.position) < Vector3.Distance(target.position, transform.position))
+        {
+			return false;
+        }
+
 		if (minDistance == -1 || minDistance > dstToTarget)
 		{
 			if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))

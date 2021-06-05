@@ -9,8 +9,9 @@ public abstract class Shell : MonoBehaviour
 		STUCK
 	}
 
-	[SerializeField] protected float speed = 1;
 	[SerializeField] protected Rigidbody rigidbody;
+	protected float speed = 1;
+	protected float attackDistance = 1;
 	protected DamageReport damageReport;
 	protected Weapon shooter;
 	protected FlyingState flyingState = FlyingState.FLYING;
@@ -32,6 +33,17 @@ public abstract class Shell : MonoBehaviour
 		this.damageReport = damageReport;
 		this.shooter = shooter;
 		rigidbody.velocity = transform.forward * speed;
+	}
+
+	/// <summary>
+	/// Called when this shell is shot
+	/// </summary>
+	/// <param name="shooter"></param>
+	/// <param name="damageReport"></param>
+	public void Shoot(Weapon shooter, DamageReport damageReport, float speedBullet ,float timeToDisappear)
+	{
+		speed = speedBullet;
+		Shoot(shooter, damageReport);
 	}
 
 	protected void OnTriggerEnter(Collider other)

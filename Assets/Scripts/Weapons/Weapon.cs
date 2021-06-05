@@ -9,12 +9,21 @@ public class Weapon : MonoBehaviour
 		hand,
     }
 
+	public enum WeaponType
+	{
+		shoot,
+		melee,
+	}
+
 	[SerializeField] GameObject shellPrefab;
 	[SerializeField] WeaponPosition weaponPosition;
+	[SerializeField] WeaponType weaponType;
 	[SerializeField] Transform modelPrefab;
 	[SerializeField] int poolSize = 20;
 	[SerializeField] float fireRate;
 	[SerializeField] float damage;
+	[SerializeField] float speedBullet = 1;
+	[SerializeField] float timeToBulletDisappear = 2;
 
 
 	Queue<GameObject> pool;
@@ -22,6 +31,7 @@ public class Weapon : MonoBehaviour
     public float FireRate { get => fireRate; }
     public float Damage { get => damage; }
     public WeaponPosition Position { get => weaponPosition; }
+    public WeaponType Type { get => weaponType; }
 
     private void Awake()
 	{
@@ -80,7 +90,7 @@ public class Weapon : MonoBehaviour
 		newShell.transform.position = transform.position;
 		newShell.transform.rotation = transform.rotation;
 		newShell.SetActive(true);
-		newShell.GetComponent<Shell>().Shoot(this, damageReport);
+		newShell.GetComponent<Shell>().Shoot(this, damageReport, speedBullet, timeToBulletDisappear);
 		if (pool.Count <= 1)
 			ResizePool(poolSize);
 	}

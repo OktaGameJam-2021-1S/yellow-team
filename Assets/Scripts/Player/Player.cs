@@ -10,12 +10,17 @@ public class Player : Entity
 	[SerializeField][ReadOnly] long coins = 0;
 
 	[Header("Weapon Configs")]
+	[SerializeField] float meleeDamage;
+	[SerializeField] float meleeFireRate;
+	[SerializeField] float meleeDistance;
+
 	[SerializeField] Weapon[] weapons;
 	[SerializeField] Transform[] weaponsPositions;
 
 	int currentWeaponIndex = 0;
 	Weapon currentWeapon;
 	float lastShootTime;
+	float lastMeleeTime;
 
 	private void OnEnable()
 	{
@@ -89,6 +94,18 @@ public class Player : Entity
 					animator.SetTrigger("Attack");
 					currentWeapon.Shoot(new DamageReport(currentWeapon.Damage, this));
 				}
+            }
+		}
+
+		if (Input.GetKeyDown(KeyCode.E) && aimer.Target != null && Vector3.Distance(transform.position, aimer.Target.position) <= meleeDistance)
+		{
+
+			aimer.FollowTarget();
+			if (Time.time - lastMeleeTime >= meleeFireRate)
+			{
+				lastMeleeTime = Time.time;
+				animator.SetTrigger("Melee");
+				aimer.Target.gameObject.SendMessage("TakeDamage", new DamageReport { damage = meleeDamage, attacker = this });
 			}
 		}
 
