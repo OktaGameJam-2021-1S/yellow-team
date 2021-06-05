@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class Weapon : MonoBehaviour
 {
 	[SerializeField] GameObject shellPrefab;
+	[SerializeField] Transform shellParent;
 	[SerializeField] int poolSize = 20;
 	[SerializeField] float fireRate;
 	[SerializeField] float damage;
@@ -26,7 +27,7 @@ public class Weapon : MonoBehaviour
 	{
 		for (int i = 0; i < amount; i++)
 		{
-			var obj = Instantiate(shellPrefab);
+			var obj = Instantiate(shellPrefab, shellParent);
 			obj.SetActive(false);
 			pool.Enqueue(obj);
 		}
