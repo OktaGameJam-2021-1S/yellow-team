@@ -5,7 +5,6 @@ using UnityEngine;
 public class AlienFrog : WalkingEnemy
 {
     [SerializeField] Animator animator;
-    public bool Attack;
 
     private void Update()
     {
