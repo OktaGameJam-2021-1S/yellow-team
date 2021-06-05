@@ -3,8 +3,16 @@ using System.Collections.Generic;
 
 public class Weapon : MonoBehaviour
 {
+	public enum WeaponPosition
+    {
+		none,
+		hand,
+    }
+
 	[SerializeField] GameObject shellPrefab;
-	[SerializeField] Transform shellParent;
+	[SerializeField] WeaponPosition weaponPosition;
+	[SerializeField] Transform modelPrefab;
+	[SerializeField] Transform shotParent;
 	[SerializeField] int poolSize = 20;
 	[SerializeField] float fireRate;
 	[SerializeField] float damage;
@@ -14,6 +22,7 @@ public class Weapon : MonoBehaviour
 
     public float FireRate { get => fireRate; }
     public float Damage { get => damage; }
+    public WeaponPosition Position { get => weaponPosition; }
 
     private void Awake()
 	{
@@ -76,4 +85,9 @@ public class Weapon : MonoBehaviour
 		if (pool.Count <= 1)
 			ResizePool(poolSize);
 	}
+
+	public void UpdateWeaponPosition(Vector3 position)
+    {
+		modelPrefab.transform.position = position;
+    }
 }

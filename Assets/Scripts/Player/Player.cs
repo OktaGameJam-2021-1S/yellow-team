@@ -5,10 +5,13 @@ public class Player : Entity
 {
 	[SerializeField] GameEvent onPlayerDeath;
 	[SerializeField] GlobalVector2 input;
-	[SerializeField] Weapon[] weapons;
 	[SerializeField] PlayerAimer aimer;
 	[SerializeField] Animator animator;
 	[SerializeField][ReadOnly] long coins = 0;
+
+	[Header("Weapon Configs")]
+	[SerializeField] Weapon[] weapons;
+	[SerializeField] Transform[] weaponsPositions;
 
 	int currentWeaponIndex = 0;
 	Weapon currentWeapon;
@@ -27,6 +30,8 @@ public class Player : Entity
 	protected new void Awake()
 	{
 		currentWeapon = weapons[currentWeaponIndex];
+		currentWeapon.gameObject.SetActive(true);
+
 		base.Awake();
 		if (currentWeapon == null)
 			currentWeapon = GetComponentInChildren<Weapon>();
@@ -86,7 +91,31 @@ public class Player : Entity
 				}
 			}
 		}
+
+		if (Input.GetKeyDown(KeyCode.Q))
+		{
+			ChangeWeapon();
+		}
+
+		if (currentWeapon != null)
+        {
+			currentWeapon.UpdateWeaponPosition(weaponsPositions[(int)currentWeapon.Position].transform.position);
+        }
 	}
+
+	public void ChangeWeapon()
+    {
+		currentWeaponIndex++;
+		if(currentWeaponIndex >= weapons.Length)
+        {
+			currentWeaponIndex = 0;
+        }
+
+		currentWeapon.gameObject.SetActive(false);
+		currentWeapon = weapons[currentWeaponIndex];
+		currentWeapon.gameObject.SetActive(true);
+    }
+
 	private void FixedUpdate()
 	{
 		if (aimer.Target == null)
