@@ -5,10 +5,13 @@ public class Player : Entity
 {
 	[SerializeField] GameEvent onPlayerDeath;
 	[SerializeField] GlobalVector2 input;
-	[SerializeField] Shooter shooter;
+	[SerializeField] Weapon[] weapons;
 	[SerializeField] PlayerAimer aimer;
 	[SerializeField] Animator animator;
 	[SerializeField][ReadOnly] long coins = 0;
+
+	int currentWeaponIndex = 0;
+	Weapon currentWeapon;
 	float lastShootTime;
 
 	private void OnEnable()
@@ -23,9 +26,10 @@ public class Player : Entity
 
 	protected new void Awake()
 	{
+		currentWeapon = weapons[currentWeaponIndex];
 		base.Awake();
-		if (shooter == null)
-			shooter = GetComponentInChildren<Shooter>();
+		if (currentWeapon == null)
+			currentWeapon = GetComponentInChildren<Weapon>();
 		if (aimer == null)
 			aimer = GetComponentInChildren<PlayerAimer>();
 	}
@@ -74,11 +78,11 @@ public class Player : Entity
 			if (aimer.Target != null)
 			{
 				aimer.FollowTarget();
-				if (Time.time - lastShootTime >= (1 / attackSpeed))
+				if (Time.time - lastShootTime >= currentWeapon.FireRate)
 				{
 					lastShootTime = Time.time;
 					animator.SetTrigger("Attack");
-					shooter.Shoot(new DamageReport(damage, this));
+					currentWeapon.Shoot(new DamageReport(currentWeapon.Damage, this));
 				}
 			}
 		}

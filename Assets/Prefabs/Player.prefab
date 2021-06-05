@@ -448,11 +448,10 @@ MonoBehaviour:
   speed: 3
   maxHp: 100
   hp: 0
-  attackSpeed: 1
-  damage: 35
   onPlayerDeath: {fileID: 11400000, guid: 29380a14d0da7914dafb8a405f2918f4, type: 2}
   input: {fileID: 11400000, guid: 6d1c5bd22173b2143982ce521d8b002e, type: 2}
-  shooter: {fileID: 7983287318372470294}
+  weapons:
+  - {fileID: 7983287318372470294}
   aimer: {fileID: 1844242923}
   animator: {fileID: 6008731422002968780}
   coins: 0
@@ -502,6 +501,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shellPrefab: {fileID: 2948252760425957401, guid: 6516da5309dd27843bb4ed34d5083f2e, type: 3}
   poolSize: 20
+  fireRate: 0.3
+  damage: 10
 --- !u!114 &1844242923
 MonoBehaviour:
   m_ObjectHideFlags: 0

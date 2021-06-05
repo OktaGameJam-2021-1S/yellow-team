@@ -2,21 +2,26 @@
 
 public class Archer : WalkingEnemy
 {
-	[SerializeField] Shooter shooter;
 	[SerializeField] EnemyAimer aimer;
+	[SerializeField] Weapon[] weapons;
+
+	int currentWeaponIndex = 0;
+	Weapon currentWeapon;
 	float lastShootTime;
 
 	protected override void Death(Entity killer)
 	{
-		shooter.Dispose();
+		currentWeapon.Dispose();
 		base.Death(killer);
 	}
 
 	protected new void Awake()
 	{
+		currentWeapon = weapons[currentWeaponIndex];
+
 		base.Awake();
-		if (shooter == null)
-			shooter = GetComponentInChildren<Shooter>();
+		if (currentWeapon == null)
+			currentWeapon = GetComponentInChildren<Weapon>();
 		if (aimer == null)
 			aimer = GetComponentInChildren<EnemyAimer>();
 	}
@@ -27,10 +32,10 @@ public class Archer : WalkingEnemy
 		{
 			walkingState = MovingState.STAYING;
 			aimer.FollowTarget();
-			if (Time.time - lastShootTime >= (1 / attackSpeed))
+			if (Time.time - lastShootTime >= currentWeapon.FireRate)
 			{
 				lastShootTime = Time.time;
-				shooter.Shoot(new DamageReport(damage, this));
+				currentWeapon.Shoot(new DamageReport(currentWeapon.Damage, this));
 			}
 		}
 	}

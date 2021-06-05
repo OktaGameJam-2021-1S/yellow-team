@@ -2,16 +2,17 @@
 using ThirteenPixels.Soda;
 public class Enemy : Entity
 {
+    [SerializeField] protected float damage = 10;
     [SerializeField] protected GlobalTransform player;
     [SerializeField] protected GlobalEnemyHandler enemyHandler;
     [SerializeField] protected GameEvent onPlayerDeath;
-    [SerializeField] protected float movingTime;  // Время движения противника
-    [SerializeField] protected float waitingTime; // Время простоя противника
-    [SerializeField] protected float randomTime;  // Рандомное время от 0 до значения будет добавлятся к времени движения
-    [SerializeField] protected float touchDamageMultiplier = 1; // Модификатор базового урона при соприкосновении
-    [SerializeField] protected int coinsToDrop = 100; // Сколько монет будет падать за убийство
-    protected Player touchingPlayer; // Нужен для оптеделения, остался ли игрок в области поражения после кулдауна атаки от прикосновения
-    
+    [SerializeField] protected float movingTime;  // Enemy movement time
+    [SerializeField] protected float waitingTime; // Enemy idle time
+    [SerializeField] protected float randomTime;  // A random time from 0 to the value will be added to the movement time
+    [SerializeField] protected float touchDamageMultiplier = 1; // Base damage modifier on contact
+    [SerializeField] protected int coinsToDrop = 100; // How many coins will fall for a kill
+    protected Player touchingPlayer; // Needed to determine if the player is still in the affected area after the touch attack cooldown
+
     [SerializeField] protected Transform target;
 
     protected void OnEnable()

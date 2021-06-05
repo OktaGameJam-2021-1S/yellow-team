@@ -11,8 +11,6 @@ public abstract class Entity : MonoBehaviour
 	[SerializeField] protected float speed;
 	[SerializeField] protected float maxHp;
 	[SerializeField] [ReadOnly] protected float hp;
-	[SerializeField] protected float attackSpeed;
-	[SerializeField] protected float damage;
 	protected MovingState walkingState = MovingState.STAYING;
 
 	public float Speed
@@ -27,15 +25,6 @@ public abstract class Entity : MonoBehaviour
 	{
 		get { return hp; }
 	}
-	public float AttackSpeed
-	{
-		get { return attackSpeed; }
-	}
-	public float Damage
-	{
-		get { return damage; }
-	}
-
 	protected void Awake()
 	{
 		hp = maxHp;

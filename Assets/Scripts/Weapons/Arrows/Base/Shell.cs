@@ -12,7 +12,7 @@ public abstract class Shell : MonoBehaviour
 	[SerializeField] protected float speed = 1;
 	[SerializeField] protected Rigidbody rigidbody;
 	protected DamageReport damageReport;
-	protected Shooter shooter;
+	protected Weapon shooter;
 	protected FlyingState flyingState = FlyingState.FLYING;
 	protected float stuckTime; // Time, that represents Time.time when shell stuck in wall
 
@@ -27,7 +27,7 @@ public abstract class Shell : MonoBehaviour
 	/// </summary>
 	/// <param name="shooter"></param>
 	/// <param name="damageReport"></param>
-	public void Shoot(Shooter shooter, DamageReport damageReport)
+	public void Shoot(Weapon shooter, DamageReport damageReport)
 	{
 		this.damageReport = damageReport;
 		this.shooter = shooter;

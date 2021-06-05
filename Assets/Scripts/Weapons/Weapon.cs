@@ -1,11 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class Shooter : MonoBehaviour
+public class Weapon : MonoBehaviour
 {
 	[SerializeField] GameObject shellPrefab;
 	[SerializeField] int poolSize = 20;
+	[SerializeField] float fireRate;
+	[SerializeField] float damage;
+
+
 	Queue<GameObject> pool;
+
+    public float FireRate { get => fireRate; }
+    public float Damage { get => damage; }
 
     private void Awake()
 	{
