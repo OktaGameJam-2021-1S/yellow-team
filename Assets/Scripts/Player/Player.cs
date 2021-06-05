@@ -131,6 +131,8 @@ public class Player : Entity
             currentWeaponIndex = 0;
         }
 
+        animator.SetTrigger("Change");
+
         currentWeapon.gameObject.SetActive(false);
         currentWeapon = weapons[currentWeaponIndex];
         currentWeapon.gameObject.SetActive(true);
