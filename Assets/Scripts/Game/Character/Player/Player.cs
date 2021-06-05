@@ -6,6 +6,11 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private IControllerChar characterController;
 
+    private void Start()
+    {
+        characterController = GetComponent<IControllerChar>();
+    }
+
     private void FixedUpdate()
     {
         characterController.HandleInput();

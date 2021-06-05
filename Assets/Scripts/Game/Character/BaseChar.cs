@@ -16,10 +16,12 @@ public abstract class BaseChar : MonoBehaviour
     #endregion
 
     [Header("Character Settings")]
-    [SerializeField] private float life;
-    [SerializeField] private float movimentSpeed;
-    [SerializeField] private float rotationSpeed;
-    [SerializeField] BaseSkill[] skills;
+    [SerializeField] protected float life;
+    [SerializeField] protected float movimentSpeed;
+    [SerializeField] protected float rotationSpeed;
+    [SerializeField] protected BaseSkill[] skills;
+
+    [SerializeField] protected Rigidbody charRigidbody;
 
     CharacterState State;
 

@@ -13,4 +13,6 @@ public abstract class BaseSkill : MonoBehaviour
         Melee,
     }
     #endregion
+
+
 }
