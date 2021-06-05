@@ -207,6 +207,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shellPrefab: {fileID: 1839290277765035566, guid: 7592b103e6561ea4aa8b5c3b40e727a8, type: 3}
+  weaponPosition: 0
+  modelPrefab: {fileID: 0}
   shellParent: {fileID: 0}
   poolSize: 3
   fireRate: 0.8
