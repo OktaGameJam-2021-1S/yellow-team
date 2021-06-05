@@ -64,5 +64,25 @@ public static class BuildCommand {
             Debug.Log("Build failed");
             EditorApplication.Exit(1);
         }
-    }        
+    }     
+    static void PerformBuild_WebGL() {
+        var options = new BuildPlayerOptions {
+            locationPathName = "Build/WebGL",
+            scenes = new[] { "Assets/Scenes/Boot.unity", "Assets/Scenes/Game.unity" },
+            target = BuildTarget.WebGL
+        };
+
+        var report = BuildPipeline.BuildPlayer(options);
+        var summary = report.summary;
+
+        if (summary.result == BuildResult.Succeeded) {
+            Debug.Log("Build succeeded: " + summary.totalSize + " bytes");
+            Debug.Log("Path: " + summary.outputPath);
+        }
+
+        if (summary.result == BuildResult.Failed) {
+            Debug.Log("Build failed");
+            EditorApplication.Exit(1);
+        }
+    }     
 }
