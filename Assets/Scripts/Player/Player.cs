@@ -7,6 +7,7 @@ public class Player : Entity
 	[SerializeField] GlobalVector2 input;
 	[SerializeField] Shooter shooter;
 	[SerializeField] PlayerAimer aimer;
+	[SerializeField] Animator animator;
 	[SerializeField][ReadOnly] long coins = 0;
 	float lastShootTime;
 
@@ -51,12 +52,18 @@ public class Player : Entity
 	/// <param name="direction"></param>
 	private void CheckMovementState(Vector2 direction)
 	{
-		if(walkingState == MovingState.STAYING && direction != Vector2.zero)
+		if (walkingState == MovingState.STAYING && direction != Vector2.zero)
+		{
 			walkingState = MovingState.MOVING;
+			animator.SetBool("Walking", true);
+		}
 		else
 		{
 			if (walkingState == MovingState.MOVING && direction == Vector2.zero)
+			{
+				animator.SetBool("Walking", false);
 				walkingState = MovingState.STAYING;
+			}
 		}
 	}
 
@@ -70,6 +77,7 @@ public class Player : Entity
 				if (Time.time - lastShootTime >= (1 / attackSpeed))
 				{
 					lastShootTime = Time.time;
+					animator.SetTrigger("Attack");
 					shooter.Shoot(new DamageReport(damage, this));
 				}
 			}
