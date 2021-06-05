@@ -936,7 +936,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 11400000, guid: c114e99e45cdb4c4484290ea37e03d0b, type: 2}
   cameraCatchUpDistance: 2
-  cameraSpeed: 0.004
+  cameraSpeed: 0.01
+  cameraOffsetZ: -5
 --- !u!1 &999957362
 GameObject:
   m_ObjectHideFlags: 0
