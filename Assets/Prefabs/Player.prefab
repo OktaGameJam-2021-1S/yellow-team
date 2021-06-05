@@ -239,11 +239,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shellPrefab: {fileID: 2948252760425957401, guid: 6516da5309dd27843bb4ed34d5083f2e, type: 3}
   weaponPosition: 1
+  weaponType: 0
   modelPrefab: {fileID: 4240983980665413638}
-  shellParent: {fileID: 0}
+  shotParent: {fileID: 0}
   poolSize: 20
   fireRate: 0.3
   damage: 8
+  speedBullet: 15
+  timeToBulletDisappear: 2
 --- !u!114 &2665651517544300239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -579,12 +582,15 @@ MonoBehaviour:
   aimer: {fileID: 1844242923}
   animator: {fileID: 1951136517}
   coins: 0
+  meleeDamage: 50
+  meleeFireRate: 1.5
+  meleeDistance: 1
   weapons:
   - {fileID: 7983287318372470294}
   - {fileID: 7120466178108278275}
   weaponsPositions:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4673344930716882736}
+  - {fileID: 4673344930716882736}
 --- !u!114 &7203569410325726731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -647,11 +653,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shellPrefab: {fileID: 2948252760425957401, guid: 6516da5309dd27843bb4ed34d5083f2e, type: 3}
   weaponPosition: 1
+  weaponType: 0
   modelPrefab: {fileID: 242343951232078256}
-  shellParent: {fileID: 0}
+  shotParent: {fileID: 0}
   poolSize: 20
   fireRate: 0.7
   damage: 20
+  speedBullet: 18
+  timeToBulletDisappear: 2
 --- !u!114 &1844242923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -817,6 +826,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3be79da1d04df4b4e85be7659c66dfb9, type: 3}
+--- !u!4 &4673344930716882736 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4240195329330838887, guid: 3be79da1d04df4b4e85be7659c66dfb9, type: 3}
+  m_PrefabInstance: {fileID: 431433676043556265}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &177465407300104770 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3be79da1d04df4b4e85be7659c66dfb9, type: 3}
