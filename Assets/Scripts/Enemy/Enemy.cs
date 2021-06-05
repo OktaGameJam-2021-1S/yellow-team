@@ -11,6 +11,9 @@ public class Enemy : Entity
     [SerializeField] protected float randomTime;  // A random time from 0 to the value will be added to the movement time
     [SerializeField] protected float touchDamageMultiplier = 1; // Base damage modifier on contact
     [SerializeField] protected int coinsToDrop = 100; // How many coins will fall for a kill
+    [Tooltip("Hoy much percertto drop a craft item")]
+    [Range(0,100)] [SerializeField] protected int droprateCraft;
+    [SerializeField] protected GameObject craftPickupPrefab;
     protected Player touchingPlayer; // Needed to determine if the player is still in the affected area after the touch attack cooldown
 
     [SerializeField] protected Transform target;
@@ -47,6 +50,12 @@ public class Enemy : Entity
         if(player!=null)
             player.AddCoins(coinsToDrop);
         enemyHandler.componentCache.RemoveEnemy(this);
+
+        if (Random.Range(1, 101) <= droprateCraft)
+        {
+            Instantiate(craftPickupPrefab, gameObject.transform.position, Quaternion.identity);
+        }
+
         Destroy(gameObject);
     }
 

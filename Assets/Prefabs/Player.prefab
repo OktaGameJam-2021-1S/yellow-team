@@ -184,14 +184,13 @@ GameObject:
   - component: {fileID: 3846768361172515875}
   - component: {fileID: 7671756361961214617}
   - component: {fileID: 1222061914533106639}
-  - component: {fileID: 8324933808762962307}
   m_Layer: 0
   m_Name: PreInstantiatedCraft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3846768361172515875
 Transform:
   m_ObjectHideFlags: 0
@@ -255,19 +254,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8324933808762962307
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4038267212027169703}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6257630970480018861
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,6 +433,7 @@ GameObject:
   - component: {fileID: 7983287318220017138}
   - component: {fileID: 7983287318220017033}
   - component: {fileID: 7983287318220017035}
+  - component: {fileID: 244544449}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -551,6 +538,21 @@ MonoBehaviour:
   aimer: {fileID: 1844242923}
   animator: {fileID: 6008731422002968780}
   coins: 0
+--- !u!114 &244544449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7983287318220017139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a588c0cb787d524c8efd3f7fa57ead5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultGO: {fileID: 4038267212027169703}
+  turretPrefab: {fileID: 0}
+  minePrefab: {fileID: 0}
 --- !u!1 &7983287318372470292
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,6 +598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shellPrefab: {fileID: 2948252760425957401, guid: 6516da5309dd27843bb4ed34d5083f2e, type: 3}
+  shellParent: {fileID: 7983287318372470295}
   poolSize: 20
   fireRate: 0.3
   damage: 10

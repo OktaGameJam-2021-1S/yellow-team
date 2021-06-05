@@ -207,6 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shellPrefab: {fileID: 1839290277765035566, guid: 7592b103e6561ea4aa8b5c3b40e727a8, type: 3}
+  shellParent: {fileID: 0}
   poolSize: 3
   fireRate: 0.8
   damage: 20
@@ -1268,6 +1269,8 @@ MonoBehaviour:
   randomTime: 1
   touchDamageMultiplier: 1
   coinsToDrop: 100
+  droprateCraft: 5
+  craftPickupPrefab: {fileID: 6100104344004886772, guid: 85679dbdbbed63a42871fab348c25d68, type: 3}
   target: {fileID: 0}
   aimer: {fileID: 5371552464047986266}
   weapons:
