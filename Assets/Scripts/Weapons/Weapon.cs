@@ -46,7 +46,7 @@ public class Weapon : MonoBehaviour
 	{
 		for (int i = 0; i < amount; i++)
 		{
-			var obj = Instantiate(shellPrefab, shellParent);
+			var obj = Instantiate(shellPrefab, shotParent);
 			obj.SetActive(false);
 			pool.Enqueue(obj);
 		}
