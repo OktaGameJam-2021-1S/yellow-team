@@ -6,11 +6,8 @@ public class WASDInput : MonoBehaviour
 	[SerializeField] private GlobalVector2 input;
 	Vector2 oldwasdInput, wasdInput;
 
-#if UNITY_EDITOR
 	private void Update()
 	{
-		/// Я не использую GetAxis потому что у него есть эффект затухания, когда клавиша отпущена, а мне нужен мгновенный переход в 0
-		/// Это лютый говнокод, но основное перемещение реализовано через наэкранный джойстик
 		#region Down
 		if (Input.GetKeyDown(KeyCode.A))
 		{
@@ -65,5 +62,4 @@ public class WASDInput : MonoBehaviour
 			input.value = oldwasdInput = wasdInput;
 		}
 	}
-#endif
 }
