@@ -2,28 +2,20 @@
 using Game.UI;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Game
 {
     public class Boot : MonoBehaviour
     {
         [SerializeField]
-        private GameApplicationContext GameContext;
-        [SerializeField] 
-        private UISpriteFactory SpriteFactory;
-        [SerializeField]
-        private UIFactory UIFactory;
-
-        private GameUIManager UIManager;
+        private GameApplicationContext GameContext;        
         private LoadingScreenView LoadingView;
+        
+        public GameUIManager UIManager { get; set; }
         private void Start()
         {
-            UIManager = new GameUIManager(GameContext, UIFactory, Toolbox.Instance);
-            Toolbox.Instance.Register<GameUIManager>(UIManager);
-            Toolbox.Instance.Register<UISpriteFactory>(SpriteFactory);
-
-            GameContext.UIManager = UIManager;
-
+            UIManager = GameContext.UIManager;
             StartCoroutine(StartLoading());
         }
 
@@ -36,7 +28,7 @@ namespace Game
                 yield return new WaitForSeconds(0.25f);
             }
 
-            UIManager.OpenGameScreen(new GameScreenView.Payload());
+            SceneManager.LoadScene("Game");
 
             yield return null;
         }
