@@ -941,6 +941,7 @@ GameObject:
   - component: {fileID: 8166807297891986543}
   - component: {fileID: 8466753805330773756}
   - component: {fileID: 1319635035864515}
+  - component: {fileID: 2390373921264497421}
   m_Layer: 7
   m_Name: MilkTruck
   m_TagString: Castle
@@ -1067,6 +1068,21 @@ MonoBehaviour:
   maxHp: 500
   hp: 0
   onPlayerDeath: {fileID: 11400000, guid: 29380a14d0da7914dafb8a405f2918f4, type: 2}
+--- !u!114 &2390373921264497421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7760752132936828048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f2a4b3a222fbdc479949f04d56316a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  speed: 0.2
+  canDrive: 0
 --- !u!1 &7760807186667074990
 GameObject:
   m_ObjectHideFlags: 0
