@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using ThirteenPixels.Soda;
+
+
 public class Enemy : Entity
 {
     [SerializeField] protected float damage = 10;
@@ -19,6 +21,8 @@ public class Enemy : Entity
 
     [SerializeField] protected Transform target;
     [SerializeField] protected Transform originalTarget;
+
+    [SerializeField] protected SFXNewObject sFXNewObject;
 
     protected void OnEnable()
     {
@@ -57,6 +61,12 @@ public class Enemy : Entity
     private void ResetTouchingPlayer()
     {
         touchingPlayer = null;
+    }
+
+    public override bool TakeDamage(DamageReport damageReport)
+    {
+        sFXNewObject.Play();
+        return base.TakeDamage(damageReport);
     }
 
     protected override void Death(Entity killer)

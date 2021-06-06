@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 309433155229418968}
   - component: {fileID: 793494572670095835}
   - component: {fileID: 4252456671908729826}
+  - component: {fileID: -4563504560853908960}
   m_Layer: 0
   m_Name: EnemyAlien2
   m_TagString: Enemy
@@ -159,11 +160,30 @@ MonoBehaviour:
   randomTime: 2
   touchDamageMultiplier: 1
   coinsToDrop: 10
-  droprateCraft: 5
-  craftPickupPrefab: {fileID: 6100104344004886772, guid: 85679dbdbbed63a42871fab348c25d68, type: 3}
+  droprateCraft: 100
+  craftPickupPrefab: {fileID: 3044125291499700390, guid: d806ebd0109e94d4a811b7bb18aff702, type: 3}
   target: {fileID: 0}
   originalTarget: {fileID: 0}
+  sFXNewObject: {fileID: -4563504560853908960}
   animator: {fileID: 878451771627311335}
+--- !u!114 &-4563504560853908960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3604702931618499068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3cdd92be41e1db40ae87bb10cb02c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip:
+  - {fileID: 8300000, guid: fcc97768497a65b4bb9f8f3d34554c61, type: 3}
+  - {fileID: 8300000, guid: 4ea6bb588e122f34881719b66116cf8e, type: 3}
+  - {fileID: 8300000, guid: da81e62419db9c742814aa9d5b2fab19, type: 3}
+  - {fileID: 8300000, guid: 2a7a91451593d574d8eee23d75c2a651, type: 3}
+  playOnStart: 0
 --- !u!1 &3840286709415741129
 GameObject:
   m_ObjectHideFlags: 0

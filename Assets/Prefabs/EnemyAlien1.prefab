@@ -93,6 +93,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-6300084246752389512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7029358511884673512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3cdd92be41e1db40ae87bb10cb02c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip:
+  - {fileID: 8300000, guid: fcc97768497a65b4bb9f8f3d34554c61, type: 3}
+  - {fileID: 8300000, guid: 4ea6bb588e122f34881719b66116cf8e, type: 3}
+  - {fileID: 8300000, guid: da81e62419db9c742814aa9d5b2fab19, type: 3}
+  - {fileID: 8300000, guid: 2a7a91451593d574d8eee23d75c2a651, type: 3}
+  playOnStart: 0
 --- !u!195 &6379412065686960591
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -139,10 +157,11 @@ MonoBehaviour:
   randomTime: 2
   touchDamageMultiplier: 1
   coinsToDrop: 10
-  droprateCraft: 5
-  craftPickupPrefab: {fileID: 6100104344004886772, guid: 85679dbdbbed63a42871fab348c25d68, type: 3}
+  droprateCraft: 100
+  craftPickupPrefab: {fileID: 3044125291499700390, guid: d806ebd0109e94d4a811b7bb18aff702, type: 3}
   target: {fileID: 0}
   originalTarget: {fileID: 0}
+  sFXNewObject: {fileID: -6300084246752389512}
   animator: {fileID: 4307821410024430118}
 --- !u!1001 &7354774319046753441
 PrefabInstance:

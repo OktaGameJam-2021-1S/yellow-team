@@ -30,7 +30,7 @@ public abstract class Entity : MonoBehaviour
 		hp = maxHp;
 	}
 
-	public bool TakeDamage(DamageReport damageReport)
+	public virtual bool TakeDamage(DamageReport damageReport)
 	{
 		hp -= damageReport.damage;
 		if (hp <= 0)

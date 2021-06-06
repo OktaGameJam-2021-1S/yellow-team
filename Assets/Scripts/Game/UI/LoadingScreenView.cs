@@ -20,6 +20,12 @@ namespace Game.UI
             
         }
 
+        private void Update()
+        {
+            if (ProgressBar.value == ProgressBar.maxValue)
+                gameObject.SetActive(false);
+        }
+
         private void Awake()
         {
             Name = Constants.UI.UI_LoadingScreen;
