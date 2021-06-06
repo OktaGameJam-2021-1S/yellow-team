@@ -116,17 +116,20 @@ public class Player : Entity
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && aimer.Target != null)
+        if (Input.GetKeyDown(KeyCode.E))
         {
             if (Time.time - lastMeleeTime >= meleeFireRate)
             {
                 lastMeleeTime = Time.time;
                 animator.SetTrigger("Melee");
 
-                if (Vector3.Distance(transform.position, aimer.Target.position) <= meleeDistance)
+                if (aimer.Target != null)
                 {
-                    aimer.FollowTarget();
-                    aimer.Target.gameObject.SendMessage("TakeDamage", new DamageReport { damage = meleeDamage, attacker = this });
+                    if (Vector3.Distance(transform.position, aimer.Target.position) <= meleeDistance)
+                    {
+                        aimer.FollowTarget();
+                        aimer.Target.gameObject.SendMessage("TakeDamage", new DamageReport { damage = meleeDamage, attacker = this });
+                    }
                 }
 
                 meleeTriggerBox.SetActive(true);
