@@ -99,14 +99,14 @@ public class Player : Entity
 
         if (Input.GetKeyDown(KeyCode.E) && aimer.Target != null)
         {
-
-            animator.SetTrigger("Melee");
-            if (Vector3.Distance(transform.position, aimer.Target.position) <= meleeDistance)
+            if (Time.time - lastMeleeTime >= meleeFireRate)
             {
-                aimer.FollowTarget();
-                if (Time.time - lastMeleeTime >= meleeFireRate)
+                lastMeleeTime = Time.time;
+                animator.SetTrigger("Melee");
+
+                if (Vector3.Distance(transform.position, aimer.Target.position) <= meleeDistance)
                 {
-                    lastMeleeTime = Time.time;
+                    aimer.FollowTarget();
                     aimer.Target.gameObject.SendMessage("TakeDamage", new DamageReport { damage = meleeDamage, attacker = this });
                 }
             }
