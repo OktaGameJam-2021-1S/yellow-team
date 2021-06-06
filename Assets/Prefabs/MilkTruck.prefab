@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6479656408633742129}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PositionBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 70, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1.3270288, y: 3.54}
+  m_AnchoredPosition: {x: 0.01, y: 3.54}
   m_SizeDelta: {x: 2, y: 0.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6033101266025776125
@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 7756943084016509302}
   - component: {fileID: 7764829575040127124}
   - component: {fileID: 7774526455688074104}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Veh_IceCream_Glass_Armour_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +371,7 @@ GameObject:
   - component: {fileID: 7757438184732838906}
   - component: {fileID: 7764918768286705600}
   - component: {fileID: 7774216541541526152}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Veh_IceCream_Glass_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -452,7 +452,7 @@ GameObject:
   - component: {fileID: 7762088997605234220}
   - component: {fileID: 7764319480814062142}
   - component: {fileID: 7774355053267890030}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Veh_IceCream_Top_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -533,7 +533,7 @@ GameObject:
   - component: {fileID: 7762446063223326350}
   - component: {fileID: 7764384629491729432}
   - component: {fileID: 7774704621034257576}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Veh_IceCream_Armour_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,7 +614,7 @@ GameObject:
   - component: {fileID: 7757011133057565740}
   - component: {fileID: 7764826290954902356}
   - component: {fileID: 7774646271697210846}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Veh_IceCream_Wheel_fr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -695,7 +695,7 @@ GameObject:
   - component: {fileID: 7762158882861345472}
   - component: {fileID: 7764350602741647428}
   - component: {fileID: 7774197110336249266}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Veh_IceCream_Wheel_fl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -776,7 +776,7 @@ GameObject:
   - component: {fileID: 7762002844244731356}
   - component: {fileID: 7764534746836267232}
   - component: {fileID: 7774836411845087326}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Veh_IceCream_Wheel_rl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -857,7 +857,7 @@ GameObject:
   - component: {fileID: 7757200186309064910}
   - component: {fileID: 7764311286994567920}
   - component: {fileID: 7773844867700031418}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Veh_IceCream_Wheel_rr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -941,7 +941,7 @@ GameObject:
   - component: {fileID: 8166807297891986543}
   - component: {fileID: 8466753805330773756}
   - component: {fileID: 1319635035864515}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MilkTruck
   m_TagString: Castle
   m_Icon: {fileID: 0}
@@ -1078,7 +1078,7 @@ GameObject:
   - component: {fileID: 7762207558219794410}
   - component: {fileID: 7765020462593812188}
   - component: {fileID: 7773815768732781228}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Veh_IceCream_SteeringW
   m_TagString: Untagged
   m_Icon: {fileID: 0}
