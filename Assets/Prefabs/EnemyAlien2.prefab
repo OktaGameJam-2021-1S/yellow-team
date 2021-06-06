@@ -222,8 +222,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9785d559bb1541439459f9f13f6d884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  maxHp: 50
+  speed: 3
+  maxHp: 35
   hp: 0
   damage: 10
   player: {fileID: 11400000, guid: c114e99e45cdb4c4484290ea37e03d0b, type: 2}
