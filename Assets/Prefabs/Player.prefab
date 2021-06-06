@@ -525,7 +525,7 @@ Transform:
   m_GameObject: {fileID: 7983287318220017139}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.501, z: -4.84}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 7983287317669529816}
   - {fileID: 7983287318372470295}
@@ -633,8 +633,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a588c0cb787d524c8efd3f7fa57ead5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mines: 0
+  turrets: 0
   defaultGO: {fileID: 5553464918221167499}
-  turretPrefab: {fileID: 0}
+  turretPrefab: {fileID: 8920018049267614455, guid: da3326f55ccf9374cbe0db9e3eca16c6, type: 3}
   minePrefab: {fileID: 75925528332333625, guid: d23185718bba0ee4fa34c7c573d96709, type: 3}
 --- !u!1 &7983287318372470292
 GameObject:

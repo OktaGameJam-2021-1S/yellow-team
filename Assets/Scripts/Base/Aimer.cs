@@ -62,4 +62,9 @@ public abstract class Aimer : MonoBehaviour
 	{
 		owner.transform.LookAt(target);
 	}
+
+	public void SetOwner(GameObject ower)
+    {
+		owner = ower;
+	}
 }

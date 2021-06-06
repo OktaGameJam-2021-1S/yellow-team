@@ -88,7 +88,7 @@ public class Weapon : MonoBehaviour
 	{
 		var newShell = pool.Dequeue();
 		newShell.transform.position = bulletSpawn.position;
-		newShell.transform.rotation = transform.rotation;
+		newShell.transform.rotation = bulletSpawn.rotation;
 		newShell.SetActive(true);
 		newShell.GetComponent<Shell>().Shoot(this, damageReport, speedBullet);
 		if (pool.Count <= 1)

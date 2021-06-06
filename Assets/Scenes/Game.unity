@@ -9053,7 +9053,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &788113662
 Transform:
   m_ObjectHideFlags: 0
@@ -9090,6 +9090,10 @@ PrefabInstance:
       objectReference: {fileID: 453132573}
     - target: {fileID: 7203569410325726731, guid: 79255aac330e88047bccabd52b5a8e51, type: 3}
       propertyPath: mines
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7203569410325726731, guid: 79255aac330e88047bccabd52b5a8e51, type: 3}
+      propertyPath: turrets
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7983287318220017038, guid: 79255aac330e88047bccabd52b5a8e51, type: 3}
