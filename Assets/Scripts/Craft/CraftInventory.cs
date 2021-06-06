@@ -13,16 +13,35 @@ public class CraftInventory
         inventory = new Dictionary<ItemType, int>();
         inventory.Add(ItemType.Turret, turret);
         inventory.Add(ItemType.Mine, mine);
+
+        PlayerHUDUI.TurretChanged(turret);
+        PlayerHUDUI.MineChanged(mine);
     }
     
     public void AddItem(ItemType item)
     {
         inventory[item] += 1;
+
+        if(item == ItemType.Turret)
+        {
+            PlayerHUDUI.TurretChanged(inventory[item]);
+        } else if (item == ItemType.Mine)
+        {
+            PlayerHUDUI.MineChanged(inventory[item]);
+        }
     }
 
     public void UseItem(ItemType item)
     {
         inventory[item] -= 1;
+        if (item == ItemType.Turret)
+        {
+            PlayerHUDUI.TurretChanged(inventory[item]);
+        }
+        else if (item == ItemType.Mine)
+        {
+            PlayerHUDUI.MineChanged(inventory[item]);
+        }
     }
 
     public bool HaveItem(ItemType item)
