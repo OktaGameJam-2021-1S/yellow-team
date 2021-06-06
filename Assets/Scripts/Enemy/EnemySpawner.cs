@@ -31,10 +31,10 @@ public class EnemySpawner : MonoBehaviour
         if (enemies.Count == 0)
             throw new System.ArgumentNullException("enemies", "Лист префабов противников пуст");
 
-
         for (int i = 0; i < enemyCount; i++)
         {
             Vector3 spawnPos;
+            Quaternion spawnRot;
             //int loopBreaker = 0;
 
             // Spawn anywhere
@@ -52,6 +52,7 @@ public class EnemySpawner : MonoBehaviour
 
 
             spawnPos = spawnPoints[ i % spawnPoints.Count].position;
+            spawnRot = spawnPoints[ i % spawnPoints.Count].rotation;
             bool isPlayer = i % 2 == 0 ? true : false;
 
             // TODO: Enemies should not be inside each other
@@ -62,8 +63,8 @@ public class EnemySpawner : MonoBehaviour
             //} while (CheckCollisions(spawnPos) && loopBreaker < 100); //Может войти в бесконечный цикл, если не будет места для спавна
             //if (loopBreaker < 100)
             //{
-            var newEnemy = Instantiate(enemies[Random.Range(0, enemies.Count)], transform);
-            newEnemy.transform.position = spawnPos;
+            var newEnemy = Instantiate(enemies[Random.Range(0, enemies.Count)], spawnPos, spawnRot, transform);
+            //newEnemy.transform.position = spawnPos;
             enemyHandler.AddEnemy(newEnemy.GetComponent<Enemy>());
             enemyHandler.Enemies[enemyHandler.Enemies.Count - 1].SetTarget(isPlayer, castle);
             //}

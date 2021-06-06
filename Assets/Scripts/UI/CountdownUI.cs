@@ -27,7 +27,6 @@ public class CountdownUI : MonoBehaviour
 
     private IEnumerator StartTimerCoroutine()
     {
-        Time.timeScale = 0;
         canvas.SetActive(true);
         for (int i = 3; i > 0; i--)
         {
@@ -35,6 +34,5 @@ public class CountdownUI : MonoBehaviour
             yield return new WaitForSecondsRealtime(1);
         }
         canvas.SetActive(false);
-        Time.timeScale = 1;
     }
 }

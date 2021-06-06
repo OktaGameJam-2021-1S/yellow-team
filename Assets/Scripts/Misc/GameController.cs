@@ -101,8 +101,6 @@ public class GameController : MonoBehaviour
 
         enemySpawner.componentCache.SpawnEnemies();
 
-        Time.timeScale = 0;
-
         bannerText.gameObject.SetActive(true);
         bannerText.text = string.Format("Wave {0}", waveNumber + 1);
 
