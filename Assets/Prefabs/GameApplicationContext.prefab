@@ -621,14 +621,26 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4833703374956847036, guid: 9a2923d5f1c36094b8a8b313daf2ce42, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4833703374956847036, guid: 9a2923d5f1c36094b8a8b313daf2ce42, type: 3}
+      propertyPath: m_Color.g
+      value: 0.18482865
+      objectReference: {fileID: 0}
+    - target: {fileID: 4833703374956847036, guid: 9a2923d5f1c36094b8a8b313daf2ce42, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4528302
+      objectReference: {fileID: 0}
     - target: {fileID: 4833703376132123841, guid: 9a2923d5f1c36094b8a8b313daf2ce42, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 11400000, guid: 89ef77c2ae2714f45b516a2e1bb9b481, type: 2}
     - target: {fileID: 4833703376132123841, guid: 9a2923d5f1c36094b8a8b313daf2ce42, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 7919782660470205118, guid: 89ef77c2ae2714f45b516a2e1bb9b481, type: 2}
     - target: {fileID: 4833703376418106256, guid: 9a2923d5f1c36094b8a8b313daf2ce42, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -721,6 +733,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4833703376666253206, guid: 9a2923d5f1c36094b8a8b313daf2ce42, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb69199303f605e4fa24b427ba89ae41, type: 3}
+    - target: {fileID: 4833703376932276879, guid: 9a2923d5f1c36094b8a8b313daf2ce42, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f3d05d0ef9c7fa84a8aa441bef812628, type: 3}
     - target: {fileID: 5468099672702628187, guid: 9a2923d5f1c36094b8a8b313daf2ce42, type: 3}
       propertyPath: m_Animation
       value: 

@@ -173,7 +173,7 @@ public class Player : Entity
     public void KillEnemy()
     {
         int p = Random.Range(0, 100);
-        if (p <= 40)
+        if (p <= 80)
         {
             dialogSystem.ShowKillText();
         }

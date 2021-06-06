@@ -35,6 +35,11 @@ public abstract class Entity : MonoBehaviour
 		hp -= damageReport.damage;
 		if (hp <= 0)
 		{
+			if(damageReport.attacker as Player != null)
+            {
+				(damageReport.attacker as Player).KillEnemy();
+            }
+
 			Death(damageReport.attacker);
 			return true;
 		}
