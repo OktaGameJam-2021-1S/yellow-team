@@ -6,6 +6,7 @@ public class BoxDrop : MonoBehaviour
 {
     [Range(0, 100)] [SerializeField] protected int droprateCraft;
     [SerializeField] private GameObject craftPickupPrefab;
+    [SerializeField] private Animator animator;
 
 
     // how to target only on melee? 
@@ -17,8 +18,15 @@ public class BoxDrop : MonoBehaviour
         if(other.tag == Tags.playerTag && other.GetComponent<PlayerMeleeData>() != null)
         {
             other.gameObject.SetActive(false);
-            Destroy(gameObject);
+            animator.SetTrigger("Explode");
+            StartCoroutine(DestroyLate());
         }
+    }
+
+    IEnumerator DestroyLate()
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
     }
 
     private void OnDestroy()
