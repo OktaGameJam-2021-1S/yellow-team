@@ -21,7 +21,7 @@ public class CraftConstructor : MonoBehaviour
     [SerializeField] private GameObject minePrefab;
     [SerializeField] private Player player;
 
-    private void Awake()
+    private void Start()
     {
         craftInventory = new CraftInventory(turrets, mines);
     }
