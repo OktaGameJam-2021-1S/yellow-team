@@ -8,6 +8,9 @@ public class CountdownUI : MonoBehaviour
     [SerializeField] GlobalGameState gameState;
     [SerializeField] TextMeshProUGUI countdown;
     [SerializeField] GameObject canvas;
+    int time;
+
+    private System.Action onComplete;
 
     private void OnEnable()
     {
@@ -27,14 +30,20 @@ public class CountdownUI : MonoBehaviour
 
     private IEnumerator StartTimerCoroutine()
     {
-        Time.timeScale = 0;
         canvas.SetActive(true);
-        for (int i = 3; i > 0; i--)
+        for (int i = time; i > 0; i--)
         {
-            countdown.text = i.ToString();
+            countdown.text = "O jogo irá iniciar em " + i.ToString();
             yield return new WaitForSecondsRealtime(1);
         }
         canvas.SetActive(false);
-        Time.timeScale = 1;
+
+        onComplete?.Invoke();
+    }
+
+    public void Config(int time, System.Action onComplete)
+    {
+        this.time = time;
+        this.onComplete = onComplete;
     }
 }

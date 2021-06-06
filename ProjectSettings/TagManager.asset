@@ -7,6 +7,7 @@ TagManager:
   - Castle
   - Environment
   - Enemy
+  - Entry
   layers:
   - Default
   - TransparentFX

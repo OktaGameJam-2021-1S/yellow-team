@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CastleAnimation : MonoBehaviour
 {
-    [SerializeField] Transform target;
+    [SerializeField] Vector3 target;
     [SerializeField] float speed;
     public bool canDrive;
     Action callbackOnEndAniamtion;
@@ -14,17 +14,19 @@ public class CastleAnimation : MonoBehaviour
     {
         if (!canDrive) return;
 
-        transform.position = Vector3.MoveTowards(transform.position, target.position, speed);
+        transform.position = Vector3.MoveTowards(transform.position, target, speed);
 
-        if(transform.position == target.position)
+        if(transform.position == target)
         {
             callbackOnEndAniamtion?.Invoke();
             canDrive = false;
         }
     }
 
-    private void OnFinishedWave()
+    public void MoveToTarget(Transform target)
     {
+        this.target = target.position;
+        this.target.y = transform.position.y;
         canDrive = true;
     }
 
