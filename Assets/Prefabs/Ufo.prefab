@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 1533691676}
   - component: {fileID: 366893895024994781}
   - component: {fileID: 7353507372084205653}
+  - component: {fileID: 2273183443259292871}
   m_Layer: 0
   m_Name: Ufo
   m_TagString: Enemy
@@ -123,6 +124,25 @@ MonoBehaviour:
   craftPickupPrefab: {fileID: 3044125291499700390, guid: d806ebd0109e94d4a811b7bb18aff702, type: 3}
   target: {fileID: 0}
   originalTarget: {fileID: 0}
+--- !u!95 &2273183443259292871
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3343400541712103999}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &5307351404532463651
 PrefabInstance:
   m_ObjectHideFlags: 0
