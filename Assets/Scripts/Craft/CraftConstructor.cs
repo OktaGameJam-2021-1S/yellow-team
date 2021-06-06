@@ -22,7 +22,7 @@ public class CraftConstructor : MonoBehaviour
 
     private void Awake()
     {
-        craftInventory = new CraftInventory(mines, turrets);
+        craftInventory = new CraftInventory(turrets, mines);
     }
 
     private void Update()
