@@ -21,12 +21,12 @@ public class Weapon : MonoBehaviour
 	[SerializeField] Transform modelPrefab;
 	[SerializeField] Transform shotParent;
 	[SerializeField] Transform bulletSpawn;
-	[SerializeField] int poolSize = 20;
+	[SerializeField] protected int poolSize = 20;
 	[SerializeField] float fireRate;
 	[SerializeField] float damage;
 	[SerializeField] float speedBullet = 1;
 
-	Queue<GameObject> pool;
+	protected Queue<GameObject> pool;
 
     public float FireRate { get => fireRate; }
     public float Damage { get => damage; }

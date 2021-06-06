@@ -776,7 +776,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1935294042987819236}
   - component: {fileID: 6644582778640081022}
-  - component: {fileID: 1019091672286832775}
   - component: {fileID: 2960033422684527976}
   m_Layer: 0
   m_Name: Autoturret
@@ -813,26 +812,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40211c9ac39ad7e4dbde32b27bc99aa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  maxHp: 100
-  hp: 0
-  ammo: 100
-  bodyTransform: {fileID: 8423975879079909004}
-  turret: {fileID: 1019091672286832775}
-  aimer: {fileID: 2960033422684527976}
-  textAmmo: {fileID: 5124777873342070516}
---- !u!114 &1019091672286832775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8920018049267614455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e27dd264a5d0fc042a2020f637654145, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   shellPrefab: {fileID: 2948252760425957401, guid: 6516da5309dd27843bb4ed34d5083f2e, type: 3}
   weaponPosition: 0
   weaponType: 0
@@ -843,6 +822,10 @@ MonoBehaviour:
   fireRate: 0.1
   damage: 2
   speedBullet: 30
+  ammo: 100
+  bodyTransform: {fileID: 8423975879079909004}
+  aimer: {fileID: 2960033422684527976}
+  textAmmo: {fileID: 5124777873342070516}
 --- !u!114 &2960033422684527976
 MonoBehaviour:
   m_ObjectHideFlags: 0

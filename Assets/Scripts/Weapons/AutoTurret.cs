@@ -2,20 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AutoTurret : Entity
+public class AutoTurret : Weapon
 {
 
     [SerializeField] private int ammo = 100;
     [SerializeField] private Transform bodyTransform;
-    [SerializeField] private Weapon turret;
     [SerializeField] PlayerAimer aimer;
     [SerializeField] TMPro.TextMeshProUGUI textAmmo;
 
+    Entity player;
     float lastShootTime;
 
-    new void Awake()
+    void Awake()
     {
-        base.Awake();
+        pool = new Queue<GameObject>(poolSize);
+        ResizePool(poolSize);
 
         if (aimer == null)
         {
@@ -31,15 +32,15 @@ public class AutoTurret : Entity
         if (aimer.Target != null)
         {
             aimer.FollowTarget();
-            if (Time.time - lastShootTime >= turret.FireRate)
+            if (Time.time - lastShootTime >= FireRate)
             {
                 lastShootTime = Time.time;
-                turret.Shoot(new DamageReport(turret.Damage, this));
+                Shoot(new DamageReport(Damage, player));
                 ammo--;
                 textAmmo.text = ammo.ToString();
                 if (ammo <= 0)
                 {
-                    Death(this);
+                    Destroy(gameObject);
                 }
             }
         }
@@ -50,8 +51,8 @@ public class AutoTurret : Entity
         aimer.Aim();
     }
 
-    protected override void Death(Entity killer)
+    public void SetEntity(Entity entity)
     {
-        gameObject.SetActive(false);
+        player = entity;
     }
 }

@@ -17,8 +17,9 @@ public class CraftConstructor : MonoBehaviour
     private GameObject preInstantiatedGO;
     [Header("Set in editor")]
     [SerializeField] private GameObject defaultGO;
-    [SerializeField] private GameObject turretPrefab;
+    [SerializeField] private AutoTurret turretPrefab;
     [SerializeField] private GameObject minePrefab;
+    [SerializeField] private Player player;
 
     private void Awake()
     {
@@ -43,9 +44,10 @@ public class CraftConstructor : MonoBehaviour
                 //preInstantiatedGO = turretPrefab;
                 preInstantiate = !preInstantiate;
                 preInstantiatedGO.SetActive(preInstantiate);
-                GameObject go = Instantiate(turretPrefab);
+                AutoTurret go = Instantiate(turretPrefab);
+                go.SetEntity(player);
                 go.transform.position = preInstantiatedGO.transform.position;
-                go.SetActive(true);
+                go.gameObject.SetActive(true);
 
                 craftInventory.UseItem(CraftInventory.ItemType.Turret);
 
