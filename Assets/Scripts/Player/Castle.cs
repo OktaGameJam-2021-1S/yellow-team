@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using ThirteenPixels.Soda;
+using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Castle : Entity
 {
@@ -10,6 +12,17 @@ public class Castle : Entity
         onPlayerDeath.Raise();
         Debug.Log("Castle is DEAD");
         gameObject.SetActive(false);
+
+        StartCoroutine(GameOverScreen());
+    }
+
+    private IEnumerator GameOverScreen()
+    {
+        yield return new WaitForSeconds(5f);
+
+        GameObject ga = new GameObject();
+        ga.AddComponent<GameOverData>().Init(false);
+        SceneManager.LoadScene("WinLoseCondition");
     }
 
 }

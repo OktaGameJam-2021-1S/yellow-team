@@ -15,7 +15,19 @@ public class winOrLose : MonoBehaviour
 
     [SerializeField]
     string[] text;
-    
+
+    GameOverData data;
+    private IEnumerator Start()
+    {
+        data = GameObject.FindObjectOfType<GameOverData>() as GameOverData;
+
+        while(data == null)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        Started(data.win);
+    }
     public void Started(bool win)
     {        
         if (win)

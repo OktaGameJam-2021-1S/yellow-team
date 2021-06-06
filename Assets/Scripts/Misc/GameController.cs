@@ -68,8 +68,9 @@ public class GameController : MonoBehaviour
 
         if (waveNumber >= wavesConfig.waves.Count)
         {
-            gameState.value = GameState.INIT;
-            SceneManager.LoadScene("Game");
+            GameObject ga = new GameObject();
+            ga.AddComponent<GameOverData>().Init(true);
+            SceneManager.LoadScene("WinLoseCondition");
         }
 
         oldBlockMap = currentBlockMap;
