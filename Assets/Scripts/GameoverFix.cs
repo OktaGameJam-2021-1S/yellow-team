@@ -5,12 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class GameoverFix : MonoBehaviour
 {
-    public void GameOver() {
-        StartCoroutine(GameOverScreen());
+    public void GameOver(DialogSystem dialogSystem) {
+        StartCoroutine(GameOverScreen(dialogSystem));
     }
 
-    private IEnumerator GameOverScreen()
+    private IEnumerator GameOverScreen(DialogSystem dialogSystem)
     {
+        dialogSystem.ShowDeadText();
+
         yield return new WaitForSeconds(5f);
 
         GameObject ga = new GameObject();

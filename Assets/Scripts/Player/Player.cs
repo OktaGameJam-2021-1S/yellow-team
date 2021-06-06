@@ -57,7 +57,7 @@ public class Player : Entity
         Debug.Log("Player is DEAD");
         gameObject.SetActive(false);
 
-        gameoverFix.GameOver();
+        gameoverFix.GameOver(dialogSystem);
     }
 
     private IEnumerator GameOverScreen()

@@ -9,6 +9,8 @@ public class GameOverData : MonoBehaviour
 
     public void Init(bool win)
     {
+        DontDestroyOnLoad(gameObject);
+
         this.win = win;
     }
 }

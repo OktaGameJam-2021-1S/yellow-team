@@ -27,6 +27,8 @@ public class winOrLose : MonoBehaviour
         }
 
         Started(data.win);
+
+        Destroy(data.gameObject);
     }
     public void Started(bool win)
     {        
