@@ -551,6 +551,7 @@ MonoBehaviour:
   - {fileID: 4673344930716882736}
   - {fileID: 4673344930716882736}
   meleeTriggerBox: {fileID: 673121964}
+  gameoverFix: {fileID: 0}
 --- !u!114 &7203569410325726731
 MonoBehaviour:
   m_ObjectHideFlags: 0
