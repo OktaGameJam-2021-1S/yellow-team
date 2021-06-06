@@ -5,6 +5,12 @@ using UnityEngine;
 public class CraftConstructor : MonoBehaviour
 {
     public CraftInventory craftInventory;
+
+    [Header("Cheats - Start values")]
+    [SerializeField] private int mines;
+    [SerializeField] private int turrets;
+
+
     //public static CraftInventory craftInventory;
 
     private bool preInstantiate;
@@ -16,7 +22,7 @@ public class CraftConstructor : MonoBehaviour
 
     private void Awake()
     {
-        craftInventory = new CraftInventory();
+        craftInventory = new CraftInventory(mines, turrets);
     }
 
     private void Update()

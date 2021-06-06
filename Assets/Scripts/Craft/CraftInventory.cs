@@ -7,11 +7,12 @@ public class CraftInventory
 {
     public Dictionary<ItemType, int> inventory;
 
-    public CraftInventory()
+
+    public CraftInventory(int turret, int mine)
     {
         inventory = new Dictionary<ItemType, int>();
-        inventory.Add(ItemType.Turret,0);
-        inventory.Add(ItemType.Mine,10);
+        inventory.Add(ItemType.Turret, turret);
+        inventory.Add(ItemType.Mine, mine);
     }
     
     public void AddItem(ItemType item)
