@@ -63,8 +63,8 @@ MonoBehaviour:
   castle: {fileID: 0}
   enemyCount: 8
   enemies:
-  - {fileID: 7029358511884673512, guid: 0a044c77c6ead054bb4e1e2696bb0d0e, type: 3}
   - {fileID: 3343400541712103999, guid: ffbb99046d5feac459f07b7521a68fc7, type: 3}
+  - {fileID: 7029358511884673512, guid: 0a044c77c6ead054bb4e1e2696bb0d0e, type: 3}
   spawnPoints:
   - {fileID: 0}
   - {fileID: 0}

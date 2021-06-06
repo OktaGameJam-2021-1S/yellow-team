@@ -16,7 +16,7 @@ public class CameraMovement : MonoBehaviour
 
     private void Update()
     {
-            cameraDestination = new Vector3(transform.position.x, transform.position.y, player.componentCache.position.z + cameraOffsetZ);
+        cameraDestination = new Vector3(transform.position.x, transform.position.y, player.componentCache.position.z + cameraOffsetZ);
 
         if (cameraDestination != null && Mathf.Abs(player.componentCache.position.z - transform.position.z + cameraOffsetZ) < cameraCatchUpDistance / 2)
         {
