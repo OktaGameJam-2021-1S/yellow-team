@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private BlockMap blockMapPrefab;
     [SerializeField] private BlockMap currentBlockMap;
     [SerializeField] private CastleAnimation castleAnimation;
+    [SerializeField] private CountdownUI countdownUI;
     private BlockMap nextBlockMap;
     private BlockMap oldBlockMap;
 
@@ -99,7 +100,6 @@ public class GameController : MonoBehaviour
 
         currentBlockMap.CloseEntryGate();
 
-        enemySpawner.componentCache.SpawnEnemies();
 
         bannerText.gameObject.SetActive(true);
         bannerText.text = string.Format("Wave {0}", waveNumber + 1);
@@ -108,6 +108,11 @@ public class GameController : MonoBehaviour
 
         bannerText.gameObject.SetActive(false);
 
-        gameState.value = GameState.STARTED;
+        countdownUI.Config(wavesConfig.waves[waveNumber].timeToStartWave,
+            () => {
+            enemySpawner.componentCache.SpawnEnemies();
+        });
+
+        gameState.value = GameState.STARTED;     
     }
 }

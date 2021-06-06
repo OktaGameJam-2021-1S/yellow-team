@@ -13,18 +13,21 @@ MonoBehaviour:
   m_Name: WaveConfig
   m_EditorClassIdentifier: 
   waves:
-  - enemyCount: 3
+  - timeToStartWave: 8
+    enemyCount: 3
     enemies:
     - {fileID: 7029358511884673512, guid: 0a044c77c6ead054bb4e1e2696bb0d0e, type: 3}
     powerUpAmount: 0
     powerUp: []
-  - enemyCount: 6
+  - timeToStartWave: 20
+    enemyCount: 6
     enemies:
     - {fileID: 7029358511884673512, guid: 0a044c77c6ead054bb4e1e2696bb0d0e, type: 3}
     - {fileID: 3343400541712103999, guid: ffbb99046d5feac459f07b7521a68fc7, type: 3}
     powerUpAmount: 0
     powerUp: []
-  - enemyCount: 10
+  - timeToStartWave: 20
+    enemyCount: 10
     enemies:
     - {fileID: 7029358511884673512, guid: 0a044c77c6ead054bb4e1e2696bb0d0e, type: 3}
     - {fileID: 3343400541712103999, guid: ffbb99046d5feac459f07b7521a68fc7, type: 3}

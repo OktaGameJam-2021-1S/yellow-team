@@ -11,6 +11,7 @@ public class WaveScriptableObject : ScriptableObject
 [Serializable]
 public class WaveObejct
 {
+    public int timeToStartWave;
     public int enemyCount;
     public List<GameObject> enemies;
     public int powerUpAmount;
