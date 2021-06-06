@@ -22,6 +22,7 @@ public class Player : Entity
     [SerializeField] Transform[] weaponsPositions;
 
     [SerializeField] GameObject meleeTriggerBox;
+    [SerializeField] GameoverFix gameoverFix;
 
     int currentWeaponIndex = 0;
     Weapon currentWeapon;
@@ -56,7 +57,7 @@ public class Player : Entity
         Debug.Log("Player is DEAD");
         gameObject.SetActive(false);
 
-        StartCoroutine(GameOverScreen());
+        gameoverFix.GameOver();
     }
 
     private IEnumerator GameOverScreen()
