@@ -187,5 +187,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3cdd92be41e1db40ae87bb10cb02c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 3757d8a1126e236438c1fe9fc34f902f, type: 3}
-  sfxDataPrefab: {fileID: 0}
+  audioClip:
+  - {fileID: 8300000, guid: 3757d8a1126e236438c1fe9fc34f902f, type: 3}
+  playOnStart: 1

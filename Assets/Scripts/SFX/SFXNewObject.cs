@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class SFXNewObject : MonoBehaviour
 {
-    public AudioClip audioClip;
-    public GameObject sfxDataPrefab;
+    public List<AudioClip> audioClip;
+    public bool playOnStart;
 
     private void Start()
     {
-        //GameObject go = Instantiate(sfxDataPrefab, transform.parent);
-        //go.GetComponent<SFXData>().audioSource.clip = audioClip;
+        if (!playOnStart) return;
+        AudioSource.PlayClipAtPoint(audioClip[Random.Range(0, audioClip.Count)], transform.position);
+    }
 
 
-        AudioSource.PlayClipAtPoint(audioClip, transform.position);
+    public void Play()
+    {
+        AudioSource.PlayClipAtPoint(audioClip[Random.Range(0, audioClip.Count)], transform.position);
     }
 }
