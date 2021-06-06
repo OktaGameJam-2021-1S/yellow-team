@@ -831,9 +831,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f2a4b3a222fbdc479949f04d56316a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {x: 0, y: 0, z: 0}
   speed: 0.2
   canDrive: 0
+  mycollider: {fileID: 8166807297891986543}
 --- !u!1 &7760807186667074990
 GameObject:
   m_ObjectHideFlags: 0

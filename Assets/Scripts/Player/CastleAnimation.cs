@@ -10,6 +10,8 @@ public class CastleAnimation : MonoBehaviour
     public bool canDrive;
     Action callbackOnEndAniamtion;
 
+    public BoxCollider mycollider;
+
     private void Update()
     {
         if (!canDrive) return;
@@ -20,11 +22,14 @@ public class CastleAnimation : MonoBehaviour
         {
             callbackOnEndAniamtion?.Invoke();
             canDrive = false;
+            mycollider.enabled = true;
         }
     }
 
     public void MoveToTarget(Transform target)
     {
+        mycollider.enabled = false;
+
         this.target = target.position;
         this.target.y = transform.position.y;
         canDrive = true;
