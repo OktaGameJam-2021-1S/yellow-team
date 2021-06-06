@@ -6063,7 +6063,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 3456106496
-  m_fontColor: {r: 0, g: 0, b: 0, a: 0.80784315}
+  m_fontColor: {r: 0.7075472, g: 0, b: 0, a: 0.80784315}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -13245,30 +13245,6 @@ PrefabInstance:
       propertyPath: castle
       value: 
       objectReference: {fileID: 4409291557012270}
-    - target: {fileID: 1525445668818591985, guid: 84824f1a9b3e1e64a919ab4f7d542ac4, type: 3}
-      propertyPath: enemyCount
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1525445668818591985, guid: 84824f1a9b3e1e64a919ab4f7d542ac4, type: 3}
-      propertyPath: spawnParent
-      value: 
-      objectReference: {fileID: 8292984014549071292}
-    - target: {fileID: 1525445668818591985, guid: 84824f1a9b3e1e64a919ab4f7d542ac4, type: 3}
-      propertyPath: enemies.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1525445668818591985, guid: 84824f1a9b3e1e64a919ab4f7d542ac4, type: 3}
-      propertyPath: enemies.Array.data[0]
-      value: 
-      objectReference: {fileID: 7029358511884673512, guid: 0a044c77c6ead054bb4e1e2696bb0d0e, type: 3}
-    - target: {fileID: 1525445668818591985, guid: 84824f1a9b3e1e64a919ab4f7d542ac4, type: 3}
-      propertyPath: enemies.Array.data[1]
-      value: 
-      objectReference: {fileID: 7029358511884673512, guid: 0a044c77c6ead054bb4e1e2696bb0d0e, type: 3}
-    - target: {fileID: 1525445668818591985, guid: 84824f1a9b3e1e64a919ab4f7d542ac4, type: 3}
-      propertyPath: enemies.Array.data[2]
-      value: 
-      objectReference: {fileID: 7029358511884673512, guid: 0a044c77c6ead054bb4e1e2696bb0d0e, type: 3}
     - target: {fileID: 1525445668818591985, guid: 84824f1a9b3e1e64a919ab4f7d542ac4, type: 3}
       propertyPath: spawnPoints.Array.data[0]
       value: 
@@ -23669,27 +23645,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4912319080713980, guid: ee7ff23dfbcf4bd46b450f46821df396, type: 3}
   m_PrefabInstance: {fileID: 2144837270}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1319635035864514 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7760752132936828048, guid: 69e2cddd19835fd4e9dca4f63871d936, type: 3}
-  m_PrefabInstance: {fileID: 7761684307378551122}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1319635035864515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1319635035864514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b61a4feb56e8444ead3d567816aa39e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  maxHp: 500
-  hp: 0
-  onPlayerDeath: {fileID: 11400000, guid: 29380a14d0da7914dafb8a405f2918f4, type: 2}
 --- !u!4 &4409291557012270 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7762130957954595452, guid: 69e2cddd19835fd4e9dca4f63871d936, type: 3}
@@ -24054,17 +24009,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6033101266025776127, guid: 69e2cddd19835fd4e9dca4f63871d936, type: 3}
-      propertyPath: entity
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7760752132936828048, guid: 69e2cddd19835fd4e9dca4f63871d936, type: 3}
       propertyPath: m_Name
       value: MilkTruck
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760752132936828048, guid: 69e2cddd19835fd4e9dca4f63871d936, type: 3}
-      propertyPath: m_TagString
-      value: Castle
       objectReference: {fileID: 0}
     - target: {fileID: 7762130957954595452, guid: 69e2cddd19835fd4e9dca4f63871d936, type: 3}
       propertyPath: m_RootOrder

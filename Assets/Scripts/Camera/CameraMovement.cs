@@ -14,12 +14,15 @@ public class CameraMovement : MonoBehaviour
 
     Vector3? cameraDestination;
 
-    private void Update() //Тут можно прописать как надо двигать камеру в зависимости от положения player, если поле длиннее экрана
+    private void Update()
     {
-        if (Mathf.Abs(player.componentCache.position.z - transform.position.z + cameraOffsetZ) > cameraCatchUpDistance)
             cameraDestination = new Vector3(transform.position.x, transform.position.y, player.componentCache.position.z + cameraOffsetZ);
-        if (cameraDestination != null && Mathf.Abs(player.componentCache.position.z - transform.position.z + cameraOffsetZ) < cameraCatchUpDistance/2)
+
+        if (cameraDestination != null && Mathf.Abs(player.componentCache.position.z - transform.position.z + cameraOffsetZ) < cameraCatchUpDistance / 2)
+        {
             cameraDestination = null;
+        }
+
         if (cameraDestination != null)
         {
             Vector3 value = cameraDestination.Value;
