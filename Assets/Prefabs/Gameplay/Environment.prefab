@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 785518407}
   - component: {fileID: 785518409}
   - component: {fileID: 785518408}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 1651814135}
   - component: {fileID: 1651814134}
   - component: {fileID: 1651814133}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Canvas (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 2075169522}
   - component: {fileID: 2075169524}
   - component: {fileID: 2075169523}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 5444396996612937800}
   - component: {fileID: 4087278904056812572}
   - component: {fileID: 1792805988}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Castle
   m_TagString: Castle
   m_Icon: {fileID: 0}
