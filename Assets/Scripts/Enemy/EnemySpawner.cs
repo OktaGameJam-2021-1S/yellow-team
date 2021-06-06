@@ -6,10 +6,10 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Transform castle;
     
     private const float overlapSphereRadius = 0.5f;
-    [Header("Spawn settings")]
-    [SerializeField] private int enemyCount;
-    [SerializeField] private List<GameObject> enemies;
-    [SerializeField] private List<Transform> spawnPoints;
+
+    private int enemyCount;
+    private List<GameObject> enemies;
+    private List<Transform> spawnPoints;
     private EnemyHandler enemyHandler;
 
 
@@ -17,6 +17,13 @@ public class EnemySpawner : MonoBehaviour
     {
         if(enemyHandler==null)
             enemyHandler = GetComponent<EnemyHandler>();
+    }
+
+    public void InitSpawner(List<GameObject> enemies, List<Transform> spawnPoints, int enemyCount)
+    {
+        this.enemies = enemies;
+        this.spawnPoints = spawnPoints;
+        this.enemyCount = enemyCount;
     }
 
     public void SpawnEnemies() //Вообще хорошо бы просто в префабе сцены расставить противников (как в Арчеро) или места их возможного появления
