@@ -11,7 +11,6 @@ public class Castle : Entity
     {
         onPlayerDeath.Raise();
         Debug.Log("Castle is DEAD");
-        gameObject.SetActive(false);
 
         StartCoroutine(GameOverScreen());
     }
@@ -19,10 +18,12 @@ public class Castle : Entity
     private IEnumerator GameOverScreen()
     {
         yield return new WaitForSeconds(5f);
+        gameObject.SetActive(false);
 
         GameObject ga = new GameObject();
         ga.AddComponent<GameOverData>().Init(false);
         SceneManager.LoadScene("WinLoseCondition");
+
     }
 
 }

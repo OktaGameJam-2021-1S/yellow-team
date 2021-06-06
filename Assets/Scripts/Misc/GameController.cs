@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour
     [SerializeField] GlobalGameState gameState;
     [SerializeField] private GlobalEnemySpawner enemySpawner;
     [SerializeField] private WaveScriptableObject wavesConfig;
-    [SerializeField] private BlockMap blockMapPrefab;
+    [SerializeField] private BlockMap[] blockMapPrefab;
     [SerializeField] private BlockMap currentBlockMap;
     [SerializeField] private CastleAnimation castleAnimation;
     [SerializeField] private CountdownUI countdownUI;
@@ -77,7 +77,8 @@ public class GameController : MonoBehaviour
 
         oldBlockMap = currentBlockMap;
         currentBlockMap.OpenExitGate();
-        currentBlockMap = Instantiate(blockMapPrefab, currentBlockMap.EndMapPoint.position, currentBlockMap.EndMapPoint.rotation);
+        int i = Random.Range(0, blockMapPrefab.Length);
+        currentBlockMap = Instantiate(blockMapPrefab[i], currentBlockMap.EndMapPoint.position, currentBlockMap.EndMapPoint.rotation);
         currentBlockMap.OpenEntryGate();
 
         currentBlockMap.GetComponent<NavMeshSurface>().BuildNavMesh();
