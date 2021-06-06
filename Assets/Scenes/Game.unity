@@ -1572,6 +1572,30 @@ PrefabInstance:
       propertyPath: currentBlockMap
       value: 
       objectReference: {fileID: 2051972297}
+    - target: {fileID: 391989925773838467, guid: 7936487b6b4ceb84bbbb75deba68d131, type: 3}
+      propertyPath: blockMapPrefab.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 391989925773838467, guid: 7936487b6b4ceb84bbbb75deba68d131, type: 3}
+      propertyPath: blockMapPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 3098668603101812306, guid: d05d8aad380555d4ab0f8ef322870534, type: 3}
+    - target: {fileID: 391989925773838467, guid: 7936487b6b4ceb84bbbb75deba68d131, type: 3}
+      propertyPath: blockMapPrefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 6490377171573165350, guid: ac8a70cd89e4d2c499e110aaa92f99c8, type: 3}
+    - target: {fileID: 391989925773838467, guid: 7936487b6b4ceb84bbbb75deba68d131, type: 3}
+      propertyPath: blockMapPrefab.Array.data[2]
+      value: 
+      objectReference: {fileID: 2818877194600759083, guid: 712e9c6761854c849bb1a28f1b2df61e, type: 3}
+    - target: {fileID: 391989925773838467, guid: 7936487b6b4ceb84bbbb75deba68d131, type: 3}
+      propertyPath: blockMapPrefab.Array.data[3]
+      value: 
+      objectReference: {fileID: 6111338415025231938, guid: 8c0e1193a62663e4f8fb72c788dee1aa, type: 3}
+    - target: {fileID: 391989925773838467, guid: 7936487b6b4ceb84bbbb75deba68d131, type: 3}
+      propertyPath: blockMapPrefab.Array.data[4]
+      value: 
+      objectReference: {fileID: 7073047188250784267, guid: 2878b0b67ae94264e977f4ff848a1766, type: 3}
     - target: {fileID: 391989925773838474, guid: 7936487b6b4ceb84bbbb75deba68d131, type: 3}
       propertyPath: m_Name
       value: Game Controller
@@ -16094,7 +16118,7 @@ Camera:
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 0
+  m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
@@ -16462,6 +16486,10 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 453308240}
+    - target: {fileID: 2211326347057048033, guid: fc7b187a291ddee4bbff9505aeeec902, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.19999695
+      objectReference: {fileID: 0}
     - target: {fileID: 7540289475076326774, guid: fc7b187a291ddee4bbff9505aeeec902, type: 3}
       propertyPath: m_Name
       value: Canvas
