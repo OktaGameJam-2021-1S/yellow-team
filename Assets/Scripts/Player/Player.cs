@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using ThirteenPixels.Soda;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Player : Entity
 {
@@ -52,6 +53,17 @@ public class Player : Entity
         onPlayerDeath.Raise();
         Debug.Log("Player is DEAD");
         gameObject.SetActive(false);
+
+        StartCoroutine(GameOverScreen());
+    }
+
+    private IEnumerator GameOverScreen()
+    {
+        yield return new WaitForSeconds(5f);
+
+        GameObject ga = new GameObject();
+        ga.AddComponent<GameOverData>().Init(false);
+        SceneManager.LoadScene("WinLoseCondition");
     }
 
     /// <summary>
