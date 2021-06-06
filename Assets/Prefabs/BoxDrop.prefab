@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88c1c33cd7a00ae4488ceac967caa219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  droprateCraft: 9
+  droprateCraft: 49
   craftPickupPrefab: {fileID: 6100104344004886772, guid: 85679dbdbbed63a42871fab348c25d68, type: 3}
   animator: {fileID: 1483098868649629013}
 --- !u!95 &1483098868649629013
