@@ -18,6 +18,7 @@ public class Enemy : Entity
     protected Entity touchingPlayer; // Needed to determine if the player is still in the affected area after the touch attack cooldown
 
     [SerializeField] protected Transform target;
+    [SerializeField] protected Transform originalTarget;
 
     protected void OnEnable()
     {
@@ -38,6 +39,19 @@ public class Enemy : Entity
         {
             target = pTarget;
         }
+        originalTarget = target;
+    }
+
+    // Called by others scripts. Used when they are destroyed
+    public void SetTargetToOriginal()
+    {
+        target = originalTarget;
+    }
+
+    public void SetNewProvisoryTarget(Transform pTarget)
+    {
+        originalTarget = target;
+        target = pTarget;
     }
 
     private void ResetTouchingPlayer()
