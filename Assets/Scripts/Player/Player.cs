@@ -140,9 +140,11 @@ public class Player : Entity
 
     private void FixedUpdate()
     {
-        if (aimer.Target == null)
-            aimer.Aim();
-        else if (!aimer.IsVisible())
-            aimer.ResetTarget();
+        //if (aimer.Target == null)
+        //    aimer.Aim();
+        //else if (!aimer.IsVisible())
+        //    aimer.ResetTarget();
+
+        aimer.Aim();
     }
 }
