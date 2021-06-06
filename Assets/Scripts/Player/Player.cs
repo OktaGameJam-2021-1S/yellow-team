@@ -11,6 +11,8 @@ public class Player : Entity
     [SerializeField] Animator animator;
     [SerializeField] [ReadOnly] long coins = 0;
 
+    [SerializeField] DialogSystem dialogSystem;
+
     [Header("Weapon Configs")]
     [SerializeField] float meleeDamage;
     [SerializeField] float meleeFireRate;
@@ -18,7 +20,7 @@ public class Player : Entity
 
     [SerializeField] Weapon[] weapons;
     [SerializeField] Transform[] weaponsPositions;
-    
+
     [SerializeField] GameObject meleeTriggerBox;
 
     int currentWeaponIndex = 0;
@@ -59,6 +61,8 @@ public class Player : Entity
 
     private IEnumerator GameOverScreen()
     {
+        dialogSystem.ShowDeadText();
+
         yield return new WaitForSeconds(5f);
 
         GameObject ga = new GameObject();
@@ -160,6 +164,15 @@ public class Player : Entity
         currentWeapon.gameObject.SetActive(false);
         currentWeapon = weapons[currentWeaponIndex];
         currentWeapon.gameObject.SetActive(true);
+    }
+
+    public void KillEnemy()
+    {
+        int p = Random.Range(0, 100);
+        if (p <= 40)
+        {
+            dialogSystem.ShowKillText();
+        }
     }
 
     private void FixedUpdate()

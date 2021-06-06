@@ -21,6 +21,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private BlockMap currentBlockMap;
     [SerializeField] private CastleAnimation castleAnimation;
     [SerializeField] private CountdownUI countdownUI;
+    [SerializeField] DialogSystem dialogSystem;
+
     private BlockMap nextBlockMap;
     private BlockMap oldBlockMap;
 
@@ -110,10 +112,12 @@ public class GameController : MonoBehaviour
         bannerText.gameObject.SetActive(false);
 
         countdownUI.Config(wavesConfig.waves[waveNumber].timeToStartWave,
-            () => {
-            enemySpawner.componentCache.SpawnEnemies();
-        });
+            () =>
+            {
+                dialogSystem.ShowStartText();
+                enemySpawner.componentCache.SpawnEnemies();
+            });
 
-        gameState.value = GameState.STARTED;     
+        gameState.value = GameState.STARTED;
     }
 }
