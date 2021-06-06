@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using ThirteenPixels.Soda;
+using System.Collections;
 
 public class Player : Entity
 {
@@ -16,6 +17,8 @@ public class Player : Entity
 
     [SerializeField] Weapon[] weapons;
     [SerializeField] Transform[] weaponsPositions;
+    
+    [SerializeField] GameObject meleeTriggerBox;
 
     int currentWeaponIndex = 0;
     Weapon currentWeapon;
@@ -109,6 +112,9 @@ public class Player : Entity
                     aimer.FollowTarget();
                     aimer.Target.gameObject.SendMessage("TakeDamage", new DamageReport { damage = meleeDamage, attacker = this });
                 }
+
+                meleeTriggerBox.SetActive(true);
+                StartCoroutine(MeleeEndAnimation());
             }
         }
 
@@ -121,6 +127,12 @@ public class Player : Entity
         {
             currentWeapon.UpdateWeaponPosition(weaponsPositions[(int)currentWeapon.Position].transform.position);
         }
+    }
+
+    IEnumerator MeleeEndAnimation()
+    {
+        yield return new WaitForSeconds(0.458f);
+        meleeTriggerBox.SetActive(false);
     }
 
     public void ChangeWeapon()
