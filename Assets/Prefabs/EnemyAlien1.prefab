@@ -139,8 +139,8 @@ MonoBehaviour:
   randomTime: 2
   touchDamageMultiplier: 1
   coinsToDrop: 10
-  droprateCraft: 5
-  craftPickupPrefab: {fileID: 6100104344004886772, guid: 85679dbdbbed63a42871fab348c25d68, type: 3}
+  droprateCraft: 100
+  craftPickupPrefab: {fileID: 3044125291499700390, guid: d806ebd0109e94d4a811b7bb18aff702, type: 3}
   target: {fileID: 0}
   originalTarget: {fileID: 0}
   animator: {fileID: 4307821410024430118}

@@ -47,7 +47,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onLevelPassed: {fileID: 11400000, guid: c92962320465d7e41bc6c44b4503a947, type: 2}
-  enemies: []
+  enemies:
+  - {fileID: 7532539436948732918, guid: 0a044c77c6ead054bb4e1e2696bb0d0e, type: 3}
+  - {fileID: 4252456671908729826, guid: 676ff2e905c41f14cb3b3302c802dbf5, type: 3}
+  - {fileID: 7353507372084205653, guid: ffbb99046d5feac459f07b7521a68fc7, type: 3}
+  enemiesKilled: 0
 --- !u!114 &1525445668818591985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,15 +65,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   castle: {fileID: 0}
-  enemyCount: 8
-  enemies:
-  - {fileID: 3343400541712103999, guid: ffbb99046d5feac459f07b7521a68fc7, type: 3}
-  - {fileID: 7029358511884673512, guid: 0a044c77c6ead054bb4e1e2696bb0d0e, type: 3}
-  - {fileID: 3604702931618499068, guid: 676ff2e905c41f14cb3b3302c802dbf5, type: 3}
-  spawnPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &1525445668818591986
 MonoBehaviour:
   m_ObjectHideFlags: 0
